@@ -42,16 +42,16 @@ In the mandatory part of the Minishell project, the shell is required to impleme
 |  | `unset` without options. | Allows the user to delete environment variables. |
 |  | `env` without options or arguments. | Allows the user to view environment variables with content. |
 |  | `exit` without options. | Allows the user to terminate execution. Additionally, all options and behaviors of Bash have been added when receiving arguments. |
-| `Redirection Management:` | `<` | Should redirect input. |
-|  | `>` | should redirect output. |
-|  | `<<` | Should accept a delimiter and read from input until a line containing only the delimiter appears (without updating the history). Additionally, the behavior of Bash has been replicated by not expanding the delimiter if it is an environment variable, while allowing the here-doc to expand the content entered by the user as long as the delimiter does not contain any quotes of any kind. |
-|  | `>>` | Should redirect output in append mode. |
+| `Redirection Management:` | `<` input | Should redirect input. |
+|  | `>` output | should redirect output. |
+|  | `<<` here_doc input | Should accept a delimiter and read from input until a line containing only the delimiter appears (without updating the history). Additionally, the behavior of Bash has been replicated by not expanding the delimiter if it is an environment variable, while allowing the here-doc to expand the content entered by the user as long as the delimiter does not contain any quotes of any kind. |
+|  | `>>` output whit append | Should redirect output in append mode. |
 | `Pipe Implementation` | The output of each command in the pipeline is piped to the input of the next command. | |
 | `Environment Variable Expansion` | Environment variables (preceded by $) should expand to their values as long as they are not within single quotes. | |
 | `Exit Status Management` | $? should expand to the exit status of the most recent command executed in the pipeline. It should also be updated with the received signals. | |
-| `Key Combination Handling` | `ctrl-C` | On a clean prompt shows a new line with a clean prompt. On a prompt with text shows a new line with a clean prompt. After executing a blocking command like cat with no arguments or grep "something" should work the same as in Bash. |
-|  | `ctrl-\`                    | On a clean prompt does nothing. On a prompt with text does nothing. After executing a blocking command like cat with no arguments or grep "something" should work the same as in Bash. |
-|  | `ctrl-D` | On a clean prompt terminates minishell. On a prompt with text does nothing. After executing a blocking command like cat with no arguments or grep "something" should work the same as in Bash. |
+| `Key Combination Handling` | `ctrl-C` (SIGINT) | On a clean prompt shows a new line with a clean prompt. On a prompt with text shows a new line with a clean prompt. After executing a blocking command like cat with no arguments or grep "something" should work the same as in Bash. |
+|  | `ctrl-\` (SIGQUIT) | On a clean prompt does nothing. On a prompt with text does nothing. After executing a blocking command like cat with no arguments or grep "something" should work the same as in Bash. |
+|  | `ctrl-D` (EOF) | On a clean prompt terminates minishell. On a prompt with text does nothing. After executing a blocking command like cat with no arguments or grep "something" should work the same as in Bash. |
 | `Quote Interpretation` | Single quotes (')                    | Should prevent the shell from interpreting metacharacters within the quoted sequence. |
 |  | Double quotes (")                    | Should prevent the shell from interpreting metacharacters within the quoted sequence, except for the dollar sign ($). |
 | `No Interpretation of Special Characters` | Do not interpret unclosed quotes or special characters not specified in the subject, such as \ (backslash) or ; (semicolon). | |
