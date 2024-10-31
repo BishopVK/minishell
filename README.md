@@ -43,9 +43,9 @@ In the mandatory part of the Minishell project, the shell is required to impleme
 |  | `env` without options or arguments. | Allows the user to view environment variables with content. |
 |  | `exit` without options. | Allows the user to terminate execution. Additionally, all options and behaviors of Bash have been added when receiving arguments. |
 | `Redirection Management:` | `<` | Should redirect input. |
-| `Redirection Management:` | `>` | should redirect output. |
-| `Redirection Management:` | `<<` | Should accept a delimiter and read from input until a line containing only the delimiter appears (without updating the history). Additionally, the behavior of Bash has been replicated by not expanding the delimiter if it is an environment variable, while allowing the here-doc to expand the content entered by the user as long as the delimiter does not contain any quotes of any kind. |
-| `Redirection Management:` | `>>` | Should redirect output in append mode. |
+|  | `>` | should redirect output. |
+|  | `<<` | Should accept a delimiter and read from input until a line containing only the delimiter appears (without updating the history). Additionally, the behavior of Bash has been replicated by not expanding the delimiter if it is an environment variable, while allowing the here-doc to expand the content entered by the user as long as the delimiter does not contain any quotes of any kind. |
+|  | `>>` | Should redirect output in append mode. |
 | `Pipe Implementation` | The output of each command in the pipeline is piped to the input of the next command. | |
 | `Environment Variable Expansion` | Environment variables (preceded by $) should expand to their values as long as they are not within single quotes. | |
 | `Exit Status Management` | $? should expand to the exit status of the most recent command executed in the pipeline. It should also be updated with the received signals. | |
