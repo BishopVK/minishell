@@ -1,0 +1,34 @@
+name: CI - Minishell
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libreadline-dev
+
+      - name: Build project
+        run: |
+          make all
+
+      - name: Clean project objects
+        run: |
+          make clean
+      
+      - name: Run tests
+        run: |
+          ./minishell
