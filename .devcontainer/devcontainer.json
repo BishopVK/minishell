@@ -1,0 +1,11 @@
+{
+	"name": "Minishell",
+	"build": {
+	  "dockerfile": "Dockerfile"
+	},
+	"postCreateCommand": "./init.sh",
+	"settings": {},
+	"extensions": [],
+	"remoteUser": "vscode"
+  }
+  
