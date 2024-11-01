@@ -1,11 +1,16 @@
 {
-	"name": "Minishell",
-	"build": {
-	  "dockerfile": "Dockerfile"
-	},
-	"postCreateCommand": "./init.sh",
-	"settings": {},
-	"extensions": [],
-	"remoteUser": "vscode"
-  }
-  
+"name": "Minishell",
+"build": {
+	"dockerfile": "Dockerfile",
+	"context": ".."
+},
+"settings": {
+	"terminal.integrated.shell.linux": "/bin/bash"
+},
+"extensions": [
+	"ms-vscode.cpptools",
+	"ms-vscode.cmake-tools"
+],
+"postCreateCommand": "./init.sh",
+"remoteUser": "vscode"
+}
