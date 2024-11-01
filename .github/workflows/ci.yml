@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
@@ -34,6 +34,12 @@ jobs:
         run: |
           if [ ! -f ./minishell ]; then echo "Executable not found"; exit 1; fi
 
-      - name: Run minishell
+      - name: Check shared library dependencies
         run: |
-          ./minishell # Ajusta el comando si necesitas pasar parámetros adicionales
+          ldd ./minishell
+
+      - name: Set PATH and Run minishell
+        env:
+          PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+        run: |
+          bash -c "./minishell"
