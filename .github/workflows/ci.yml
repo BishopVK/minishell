@@ -18,14 +18,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential libreadline-dev
 
+      - name: Build project
+        run: |
+          make
+
       - name: Verify libft exists
         run: |
           ls -l include/libft
           if [ ! -f include/libft/libft.a ]; then echo "Libft not found"; exit 1; fi
-
-      - name: Build project
-        run: |
-          make
 
       - name: Verify minishell executable
         run: |
