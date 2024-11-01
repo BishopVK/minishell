@@ -26,6 +26,10 @@ jobs:
         run: |
           make clean
       
-      - name: Run tests
+      - name: Verify executable exists
         run: |
-          ./minishell
+          if [ ! -f ./minishell ]; then echo "Executable not found"; exit 1; fi
+
+      - name: Run minishell
+        run: |
+          ./minishell # Ajusta el comando si necesitas pasar parámetros adicionales
