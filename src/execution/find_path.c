@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danjimen & isainz-r <danjimen & isainz-    +#+  +:+       +#+        */
+/*   By: danjimen <danjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:28:17 by isainz-r          #+#    #+#             */
-/*   Updated: 2024/10/24 14:25:45 by danjimen &       ###   ########.fr       */
+/*   Updated: 2024/11/04 12:45:36 by danjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ char	*path_included(char	**kid)
 	return (0);
 }
 
-char	*get_path_command(char **kid, char **env, char *path_mid)
+char	*get_path_command(int i, char **kid, char **env, char *path_mid)
 {
-	int		i;
 	char	*path;
 	char	**path_list;
 
+	path_list = NULL;
 	if (kid[0] != NULL && ft_strchr(kid[0], '/'))
 		return (path_included(kid));
 	i = -1;
