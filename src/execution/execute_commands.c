@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_commands.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danjimen & isainz-r <danjimen & isainz-    +#+  +:+       +#+        */
+/*   By: danjimen <danjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:50:09 by isainz-r          #+#    #+#             */
-/*   Updated: 2024/10/24 14:25:26 by danjimen &       ###   ########.fr       */
+/*   Updated: 2024/11/04 12:45:57 by danjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	execute(t_execution *iter_exe, t_mini *mini, t_args *args)
 	create_env_matrix(args->mini);
 	dup_redirections(iter_exe);
 	path_mid = NULL;
-	path_command = get_path_command(iter_exe->command, mini->env, path_mid);
+	path_command = get_path_command(0, iter_exe->command, mini->env, path_mid);
 	if (path_command)
 	{
 		if (access(path_command, X_OK) == 0)
