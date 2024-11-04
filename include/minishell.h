@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danjimen & isainz-r <danjimen & isainz-    +#+  +:+       +#+        */
+/*   By: danjimen <danjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 07:52:36 by danjimen          #+#    #+#             */
-/*   Updated: 2024/10/29 07:56:49 by danjimen &       ###   ########.fr       */
+/*   Updated: 2024/11/04 12:46:21 by danjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -378,7 +378,7 @@ void		free_last_env(t_mini *mini);
 //////////////////////////////////////////////////////
 //					FIND_PATH.C						//
 //////////////////////////////////////////////////////
-char		*get_path_command(char **kid, char **env, char *path_mid);
+char		*get_path_command(int i, char **kid, char **env, char *path_mid);
 void		fill_exe(t_params *iter_params, t_execution *iter_exe);
 
 //////////////////////////////////////////////////////
