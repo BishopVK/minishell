@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danjimen <danjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: danjimen,isainz-r,serferna <ft_transcen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:28:17 by isainz-r          #+#    #+#             */
-/*   Updated: 2024/11/04 12:45:36 by danjimen         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:59:17 by danjimen,is      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/minishell.h"
+
+char	*remove_literal_path(char *path_list)
+{
+	char *path_mid;
+
+	if (ft_strncmp("PATH=", path_list, 5) == 0)
+		path_mid = ft_strjoin(path_list + 5, "/");
+	else
+		path_mid = ft_strjoin(path_list, "/");
+
+	return (path_mid);
+}
 
 char	*check_command(char **path_list, char *path_mid, char *kid)
 {
@@ -21,7 +33,7 @@ char	*check_command(char **path_list, char *path_mid, char *kid)
 	j = -1;
 	while (path_list[++j])
 	{
-		path_mid = ft_strjoin(path_list[j], "/");
+		path_mid = remove_literal_path(path_list[j]);
 		path_fin = ft_strjoin(path_mid, kid);
 		free(path_mid);
 		if (access(path_fin, X_OK) == 0)
