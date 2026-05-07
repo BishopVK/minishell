@@ -22,7 +22,7 @@
   (ej:	echo "Hola $USER" ==> Hola danjimen)
 
 *metacaracteres:
-	*, ?. $, [y], `, $(...), &, |, ;, &&, ||, >, >>, <, <<, &>, |&, ~
+	*, ?. $, [y], `, $(...), &, |, ;, &&, ||, >, >>, <, <<, &>, |&, ~, {}
 
 • Interpretar redirecciones:
 	<	redirigir input
