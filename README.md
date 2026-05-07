@@ -55,3 +55,7 @@ In the mandatory part of the Minishell project, the shell is required to impleme
 | `Quote Interpretation` | Single quotes (')                    | Should prevent the shell from interpreting metacharacters within the quoted sequence. |
 |  | Double quotes (")                    | Should prevent the shell from interpreting metacharacters within the quoted sequence, except for the dollar sign ($). |
 | `No Interpretation of Special Characters` | Do not interpret unclosed quotes or special characters not specified in the subject, such as \ (backslash) or ; (semicolon). | |
+
+## Screenshot
+
+![Minishell](/img/minishell.png "Minishell")
